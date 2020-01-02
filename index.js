@@ -28,6 +28,22 @@ io.sockets.on('connection', socket => {
         console.log(`Disconneted: ${connections.length} sockets connected.`)
     })
 
+    socket.on('add player', (data, callback) => {
+        socket.username = data
+        if (players.indexOf(socket.username) > -1) {
+            callback(false)
+        } else {
+            players.push(socket.username)
+            updateUsernames()
+            console.log(players)
+            callback(true)
+            if (Object.keys(players).length == 2) {
+                io.emit('connected', socket.username)
+                io.emit('game start')
+            }
+        }
+    })
+
     const updateUsernames = () => {
         io.sockets.emit('get players', players)
     }
