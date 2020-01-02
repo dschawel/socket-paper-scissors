@@ -1,0 +1,43 @@
+/* APP */
+html, body {
+    margin: 0;
+    padding: 0;
+}
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+input {
+    font-size: 2em;
+    text-align: center;
+}
+button {
+    font-size: 1.5em;
+}
+hr {
+    margin: 2em;
+    width: 40vw;
+}
+/* PARTIALS */
+header, footer {
+    height: 10vh;
+    width: 100vw;
+    text-align: center;
+    background-color: red;
+}
+footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+/* SCREENS */
+.screen {
+    height: 80vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
